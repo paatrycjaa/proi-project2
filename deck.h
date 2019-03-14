@@ -21,10 +21,12 @@ public:
     void addCard(Card newCard);                                                 //dodaje katre do talii
     Card findOldest() const;                                                    //znajduje najstarsza karte w talii
     Card findYoungest() const;                                                  //znajduje najmlodsza karte w talii
-    bool ifCardInDeck(Card c) const;                                            //sprawdza czy karta znajduje sie juz w talii
+    bool ifCardInDeck(Card c) const;
+    //Deck operator+(const Deck & two);
+    //Deck operator+=(const Deck &two);                                            //sprawdza czy karta znajduje sie juz w talii
 
-    friend Deck operator+(const Deck &one, const Deck &two);                    //zaprzyjazniona funkcja -> przeciazenie operatora + (dodawanie talii) -> zwraca nowa zmienna
-    friend void operator += ( Deck &one, const Deck two);                       //zaprzyjazniona funkcja -> przeciazenie operatora += (dodawanie talii) -> do obecnej talii
+    friend Deck operator + (const Deck &one, const Deck &two);                    //zaprzyjazniona funkcja -> przeciazenie operatora + (dodawanie talii) -> zwraca nowa zmienna
+    friend Deck operator += ( Deck &one, const Deck &two);                       //zaprzyjazniona funkcja -> przeciazenie operatora += (dodawanie talii) -> do obecnej talii
 
 private:
     std::vector<Card> deck;                                                     //talia jako wektor kart

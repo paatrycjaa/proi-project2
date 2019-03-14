@@ -32,6 +32,7 @@ int main(){
     cout << "Najstarsza karta z talii drugiej\n" << decktwo.findYoungest() << endl;
 
     cout << "Suma dwoch talii\n" << deck + decktwo << endl;                             //sumowanie dwoch talii -> przeciazenie operatora + (nowa zmienna zwracana)
+    cout << deck << endl;
     deck += decktwo;                                                                    //sumowanie dwoch talii -> przeciazenie operatora += (dodanie do istniejacej zmiennej i nadpisanie jej)
     cout << deck << endl;
 

@@ -64,6 +64,30 @@ bool Deck::ifCardInDeck(Card c) const{                                          
     return false;
 }
 
+/*
+Deck Deck::operator+(const Deck & two){                                                   //przeciazenie operatora + -> dodawanie dwóch obiektow talii (nie dupluja sie)
+    Deck temp = *this;
+    for (size_t i = 0; i < two.deck.size(); i++){                                                   //zwraca nowa wartosc
+        if (! this->ifCardInDeck(two.deck[i])){
+            temp.deck.push_back(two.deck[i]);
+        }
+    }
+    return temp;
+}
+
+Deck Deck::operator+=(const Deck &two){                                                   //przeciazenie operatora + -> dodawanie dwóch obiektow talii (nie dupluja sie)
+    for (size_t i = 0; i < two.deck.size(); i++){                                                   //zwraca nowa wartosc
+        if (! this->ifCardInDeck(two.deck[i])){
+            this->deck.push_back(two.deck[i]);
+        }
+    }
+    return *this;
+}*/
+
+
+
+
+
 Deck operator+(const Deck &one, const Deck &two){                                                   //przeciazenie operatora + -> dodawanie dwóch obiektow talii (nie dupluja sie)
     Deck temp = one;
     for (size_t i = 0; i < two.deck.size(); i++){                                                   //zwraca nowa wartosc
@@ -74,12 +98,13 @@ Deck operator+(const Deck &one, const Deck &two){                               
     return temp;
 }
 
-void operator += (Deck &one, const Deck two){                                                       //przeciazenie operatora += -> dodawanie dwoch obiektow talii (nie dupluje sie)
+Deck operator += (Deck &one, const Deck &two){                                                       //przeciazenie operatora += -> dodawanie dwoch obiektow talii (nie dupluje sie)
     for (size_t i = 0; i < two.deck.size(); i++){                                                   //nadpisuje wartosc pierwszego obiektu
         if (! one.ifCardInDeck(two.deck[i])){
             one.deck.push_back(two.deck[i]);
         }
     }
+    return one;
 }
 
 ostream &operator <<(ostream &exit, const Deck &d ){                                                //przeciazenie operatora << -> wypisanie obiektu talii na ekran
