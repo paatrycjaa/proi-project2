@@ -16,8 +16,8 @@ Shell::Shell(){
     Deck* one = new Deck(howMany());
     cout << "Talia druga" << endl;
     Deck* two = new Deck(howMany());
-    printStart();
-    action(one, two);
+    delete one;
+    delete two;
 }
 
 Shell::~Shell(){
