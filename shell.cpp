@@ -21,8 +21,8 @@ Shell::Shell(){
 }
 
 Shell::~Shell(){
-    delete one;
-    delete two;
+    //delete one;
+    //delete two;
 }
 
 void Shell::printStart(){
