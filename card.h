@@ -8,15 +8,14 @@
 #ifndef CARD_H_
 #define CARD_H_
 
-#include <iostream>
-
+#include <string>
 //Klasa reprezentujaca karte do gry
 
 class Card{
 
 public:
 
-    enum Color {diamond, heart, spades, club};                                                          // karo, kier, pik, trefl
+    enum Color {diamond, club, heart, spades} ;                                                          // karo, trefl, kier, pik
     enum Rank {Ace = 1, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King};       // as, jedynka, dwojka, trojka, czworka, piatka, szostka, siodemka, osemka, dziewiatka, dziesiatka, jop, dama, krol
 
     Card(Rank val, Color col);                                                                          //konstruktor

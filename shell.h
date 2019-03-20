@@ -14,25 +14,23 @@
 class Shell {
 
 public:
-
-Shell();
-~Shell();
-void printStart();
-void clearBufor();
-void action(Deck* one, Deck* two);
-void addDecks(Deck* one, Deck* two);
-void addDecksChange(Deck* one, Deck* two);
-int howMany();
-void youngest(Deck *one, Deck *two);
-void oldest(Deck *one, Deck *two);
-void addCardToDeck(Deck* one, Deck* two);
-void readWhatAdd(Deck* temp);
-void printDecks(Deck* one, Deck* two);
+    Shell();
+    ~Shell();
+    void printStart() const;
+    void clearBufor() const;
+    void action();
+    void printDecks() const;
+    int getInt(int x1, int x2) const;
 
 private:
     Deck* one;
     Deck* two;
 
+    void addDecks() const;
+    void addDecksChange();
+    void youngest() const;
+    void oldest() const;
+    void addCardToDeck();
 };
 
 

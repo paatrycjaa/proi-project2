@@ -8,7 +8,6 @@
 #ifndef DECK_H_
 #define DECK_H_
 
-#include <iostream>
 #include <vector>
 #include "card.h"
 

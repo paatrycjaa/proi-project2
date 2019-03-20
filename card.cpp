@@ -10,7 +10,6 @@
 using namespace std;
 
 #include "card.h"
-#include <string>
 
 Card::~Card(){                                                                                  //destruktor
 
@@ -31,13 +30,17 @@ Card::Rank Card::getRank() const{                                               
 string Card::colorToString() const{                                                             //zamienia kolor na stringa
     switch (color){
         case diamond :
-            return "Karo";
+            return "\u2666";
+            //return "Karo";
         case spades :
-            return "Pik";
+            return "\u2660";
+            //return "Pik";
         case heart :
-            return "Kier";
+            return "\u2665";
+            //return "Kier";
         case club :
-            return "Pik";
+            return "\u2663";
+            //return "Zyro";
         default :
             return "Blad";
     }
@@ -48,35 +51,36 @@ string Card::rankToString() const{                                              
         case Ace :
             return "As";
         case Two :
-            return "Dwojka";
+            return "2";
         case Three :
-            return "Trojka";
+            return "3";
         case Four :
-            return "Czworka";
+            return "4";
         case Five :
-            return "Piatka";
+            return "5";
         case Six :
-            return "Szostka";
+            return "6";
         case Seven :
-            return "Siodemka";
+            return "7";
         case Eight :
-            return "Osemka";
+            return "8";
         case Nine :
-            return "Dziewiatka";
+            return "9";
         case Ten :
-            return "Dziesiatka";
+            return "10";
         case Jack :
-            return "Walet";
+            return "J";
         case Queen :
-            return "Dama";
+            return "D";
         case King :
-            return "Krol";
+            return "K";
         default :
             return "Blad";
     }
 }
 
 ostream&operator <<(ostream &exit, const Card &c ){                                        //przeciazenie operatora << wypisanie klasy karta na ekran
-    exit << "Kolor:" << c.colorToString() << "\tFigura: " << c.rankToString() << endl ;
+    //exit << "Kolor:" << c.colorToString() << "\tFigura: " << c.rankToString() << endl ;
+    exit << c.rankToString() << " " << c.colorToString() << endl ;
     return exit;
 };

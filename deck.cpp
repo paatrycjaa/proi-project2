@@ -5,14 +5,10 @@
 *@version 1.0 11/03/2019
 */
 
-#include <iostream>
-#include <random>
-#include <ctime>
 using namespace std;
 
+#include <iostream>
 #include "deck.h"
-#include <string>
-
 
 Deck::Deck(){                                                                                       //konstruktor
 
@@ -42,29 +38,30 @@ bool Deck::addCard(Card newCard){                                               
         }
     }
     deck.push_back(newCard);
-    cout << newCard << endl;
     return true;
 }
 
 Card Deck::findOldest() const{                                                                      //znajduje najstarsza karte w talii
     Card temp(Card::Ace, Card::diamond);
     for( size_t i = 0; i< deck.size(); i++){
-        if(temp.getRank() < deck[i].getRank()){
-            if(temp.getColor() < deck[i].getColor()){
+        if(temp.getRank() < deck[i].getRank())
+            temp = deck[i];
+        if(temp.getRank() == deck[i].getRank()){
+            if(temp.getColor() < deck[i].getColor())
                 temp = deck[i];
-            }
         }
     }
     return temp;
 };
 
 Card Deck::findYoungest() const{                                                                    //znajduje najmlodsza karte w talii
-    Card temp(Card::King, Card::club);
+    Card temp(Card::King, Card::spades);
     for( size_t i = 0; i< deck.size(); i++){
-        if(temp.getRank() > deck[i].getRank()){
-            if(temp.getColor() > deck[i].getColor()){
+        if(temp.getRank() > deck[i].getRank())
+            temp = deck[i];
+        if(temp.getRank() == deck[i].getRank()){
+            if(temp.getColor() > deck[i].getColor())
                 temp = deck[i];
-            }
         }
     }
     return temp;
