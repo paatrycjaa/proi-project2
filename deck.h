@@ -16,9 +16,10 @@ class Deck {
 
 public:
     Deck();                                                                     //konstruktor
+    Deck(int numberOfCards);
     ~Deck();                                                                    //destruktor
     friend std::ostream & operator <<(std::ostream &exit, const Deck &d );      //zaprzyjazniona funkcja -> przeciazenie operatora << (wypisywanie na ekran)
-    void addCard(Card newCard);                                                 //dodaje katre do talii
+    bool addCard(Card newCard);                                                 //dodaje katre do talii
     Card findOldest() const;                                                    //znajduje najstarsza karte w talii
     Card findYoungest() const;                                                  //znajduje najmlodsza karte w talii
     bool ifCardInDeck(Card c) const;
@@ -31,7 +32,6 @@ public:
 private:
     std::vector<Card> deck;                                                     //talia jako wektor kart
 };
-
 
 
 

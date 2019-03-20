@@ -6,35 +6,15 @@
 */
 
 #include <iostream>
-#include "deck.h"
-
+#include "shell.h"
+#include <cstdlib>
 
 using namespace std;
 
 int main(){
+    srand(time(NULL));
 
-    Deck deck;                                                                          //deklaracja dwoch pustych talii
-    Deck decktwo;
-
-    deck.addCard(Card(Card::Ace, Card::diamond));                                       //dodawanie kart do kazdej z talii
-    deck.addCard(Card(Card::Jack, Card::spades));
-    deck.addCard(Card(Card::Ace, Card::diamond));
-
-    decktwo.addCard(Card(Card::Ace, Card::diamond));
-    decktwo.addCard(Card(Card::King, Card::spades));
-
-
-    cout << "talia pierwsza\n" << deck << endl;                                         //wypisanie talii na ekran ->przeciazenie <<
-    cout << "talia druga\n" << decktwo << endl;
-    cout << "Najstarsza karta z talii pierwszej\n" << deck.findOldest() << endl;        //zwrocenie najstarszej katry i najmlodszej karty w taliach
-    cout << "Najmlodsza karta z talii pierwszej\n" << deck.findYoungest() << endl;
-    cout << "Najstarsza karta z talii drugiej\n" << decktwo.findOldest() << endl;
-    cout << "Najstarsza karta z talii drugiej\n" << decktwo.findYoungest() << endl;
-
-    cout << "Suma dwoch talii\n" << deck + decktwo << endl;                             //sumowanie dwoch talii -> przeciazenie operatora + (nowa zmienna zwracana)
-    cout << deck << endl;
-    deck += decktwo;                                                                    //sumowanie dwoch talii -> przeciazenie operatora += (dodanie do istniejacej zmiennej i nadpisanie jej)
-    cout << deck << endl;
-
+    Shell Object;
+    cout << 1;
     return 0;
 }

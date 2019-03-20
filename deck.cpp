@@ -6,7 +6,8 @@
 */
 
 #include <iostream>
-
+#include <random>
+#include <ctime>
 using namespace std;
 
 #include "deck.h"
@@ -17,18 +18,32 @@ Deck::Deck(){                                                                   
 
 };
 
+Deck::Deck(int numberOfCards){                                                                                       //konstruktor
+    for (int i = 0; i < numberOfCards; i++){
+        while(1){
+            Card temp(Card::Rank((rand() %13) + 1), Card::Color(rand() %4));
+            if (!ifCardInDeck(temp)) {
+                addCard(temp);
+                break;
+            }
+        }
+    }
+};
+
 Deck::~Deck(){                                                                                      //destruktor
 
 };
 
-void Deck::addCard(Card newCard){                                                                   //dodaje karte do talii (talia jako tablica kart)
+bool Deck::addCard(Card newCard){                                                                   //dodaje karte do talii (talia jako tablica kart)
     for(size_t i =0; i< deck.size(); i++){
         if (newCard.getColor() == deck[i].getColor() && newCard.getRank() == deck[i].getRank()){    //sprawdzenie czy karta
             cout << "Nie mozna dodac karty, ktora jest juz w zestawie" << endl;
-            return;
+            return false;
         }
     }
     deck.push_back(newCard);
+    cout << newCard << endl;
+    return true;
 }
 
 Card Deck::findOldest() const{                                                                      //znajduje najstarsza karte w talii
@@ -113,6 +128,7 @@ ostream &operator <<(ostream &exit, const Deck &d ){                            
     };
     return exit;
 };
+
 
 
 
